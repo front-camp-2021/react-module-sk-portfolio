@@ -7,6 +7,7 @@ function changeCheckedField(payload){
         payload
     }
 }
+
 export {
     CHANGE_CHECKED_FIELD,
     CLEAR_FORM,

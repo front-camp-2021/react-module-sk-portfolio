@@ -1,4 +1,4 @@
-import {CLEAR_FORM, CHANGE_CHECKED_FIELD} from "./actions";
+import {CLEAR_FORM, CHANGE_CHECKED_FIELD, CHANGE_SLIDER_RANGE} from "./actions";
 
 
 export function filters(state = getFilters(filtersInitialState), action) {
