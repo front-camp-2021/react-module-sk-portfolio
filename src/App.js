@@ -1,6 +1,4 @@
-import logo from './logo.svg';
 import CardList from "./containers/CardList/CardList";
-import './App.css';
 import {Sidebar} from "./containers/Sidebar";
 import heart from "img/icons/white-heart.svg"
 import {useSelector} from "react-redux";
