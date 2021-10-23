@@ -33,6 +33,74 @@ export const productsInitialState = [
         "isWished": false
     },
     {
+        "id": "nzbg9f3lqfkkr9kjkav",
+        "images": [
+            "https://content2.rozetka.com.ua/goods/images/big_tile/133140519.jpg"
+        ],
+        "title": "Мишка ASUS ROG Pugio II Wireless Black (90MP01L0-BMUA00)",
+        "rating": 2.43,
+        "price": 2400,
+        "category": "computer_mouse",
+        "brand": "asus"
+    },
+    {
+        "id": "orthyzvwufkr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/162209995.jpg",
+            "https://content2.rozetka.com.ua/goods/images/big_tile/162209997.jpg"
+        ],
+        "title": "Мышь ASUS ROG Chakram Core Optical USB Gaming (90MP01T0-BMUA00)",
+        "rating": 0.87,
+        "price": 2999,
+        "category": "computer_mouse",
+        "brand": "asus"
+    },
+    {
+        "id": "28fhdt2goc2kr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/163141787.jpg"
+        ],
+        "title": "Мишка ASUS TUF M5 USB Grey (90MP0140-B0UA00)",
+        "rating": 5,
+        "price": 648,
+        "category": "computer_mouse",
+        "brand": "asus"
+    },
+    {
+        "id": "xahkxgvo6w8kr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/188787884.jpg"
+        ],
+        "title": "Провідна миша ASUS TUF Gaming M3 Grey Gaming (90MP01J0-B0UA00)",
+        "rating": 2.61,
+        "price": 699,
+        "category": "computer_mouse",
+        "brand": "asus"
+    },
+    {
+        "id": "goryotq715akr9kjkav",
+        "images": [
+            "https://content2.rozetka.com.ua/goods/images/big_tile/188787998.jpg",
+            "https://content2.rozetka.com.ua/goods/images/big_tile/188788013.jpg"
+        ],
+        "title": "Безпровідна миша ASUS ROG Strix Impact II Wireless Black (90MP01P0-BMUA00)",
+        "rating": 0.54,
+        "price": 2000,
+        "category": "computer_mouse",
+        "brand": "asus"
+    },
+    {
+        "id": "yqsnlxiashjkr9kjkav",
+        "images": [
+            "https://content2.rozetka.com.ua/goods/images/big_tile/177613234.jpg"
+        ],
+        "title": "Gigabyte Aorus NVMe Gen4 7000s SSD 1TB M.2 2280 NVMe PCIe 4.0 x4 3D NAND TLC (GP-AG70S1TB)",
+        "rating": 3.35,
+        "price": 605,
+        "category": "ssd",
+        "brand": "gigabyte"
+    },
+    {
         "id": "qeagrlm9lrkr9kjkav",
         "images": [
             "https://content1.rozetka.com.ua/goods/images/big_tile/178060622.jpg",
@@ -124,6 +192,63 @@ export const productsInitialState = [
         "price": 1600,
         "category": "sound_cards",
         "brand": "asus"
+    },
+    {
+        "id": "dhc1efgwt9jkr9kjkav",
+        "images": [
+            "https://content2.rozetka.com.ua/goods/images/big_tile/12327056.jpg"
+        ],
+        "title": "Gigabyte SSD 120GB 2.5\" SATAIII NAND TLC (GP-GSTFS31120GNTD)",
+        "rating": 3.14,
+        "price": 809,
+        "category": "ssd",
+        "brand": "gigabyte"
+    },
+    {
+        "id": "sgtc2t612kr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/12327050.jpg",
+            "https://content2.rozetka.com.ua/goods/images/big_tile/12326938.jpg"
+        ],
+        "title": "Gigabyte SSD 240GB 2.5\" SATAIII NAND TLC (GP-GSTFS31240GNTD)",
+        "rating": 4.8,
+        "price": 919,
+        "category": "ssd",
+        "brand": "gigabyte"
+    },
+    {
+        "id": "a19s1ncr1qwkr9kjkav",
+        "images": [
+            "https://content.rozetka.com.ua/goods/images/big_tile/18738560.jpg"
+        ],
+        "title": "Gigabyte 128GB M.2 2280 NVMe PCIe 3.0 x4 NAND TLC (GP-GSM2NE3128GNTD)",
+        "rating": 4.86,
+        "price": 889,
+        "category": "ssd",
+        "brand": "gigabyte"
+    },
+    {
+        "id": "hgvvg4ii0odkr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/16529609.jpg"
+        ],
+        "title": "Gigabyte Aorus NVMe Gen4 SSD 1TB M.2 2280 NVMe PCIe 4.0 x4 3D NAND TLC (GP-ASM2NE6100TTTD)",
+        "rating": 1.42,
+        "price": 4900,
+        "category": "ssd",
+        "brand": "gigabyte"
+    },
+    {
+        "id": "1hp5j5gm2geikr9kjkav",
+        "images": [
+            "https://content1.rozetka.com.ua/goods/images/big_tile/13467872.jpg",
+            "https://content2.rozetka.com.ua/goods/images/big_tile/13467913.jpg"
+        ],
+        "title": "Kingston SSD HyperX Fury 3D 240GB 2.5\" SATAIII TLC (KC-S44240-6F)",
+        "rating": 1.7,
+        "price": 1088,
+        "category": "ssd",
+        "brand": "kingston"
     },
     {
         "id": "w9jfp9mn1zdkr9kjkav",
