@@ -1,8 +1,8 @@
-import {FilterList} from "../components/FilterList";
+import {FilterList} from "./FilterList";
 import {useDispatch, useSelector} from "react-redux";
-import {selectFilters} from "../features/filters/selectors";
-import {CLEAR_FORM} from "../features/filters/actions";
-import {DoubleSlider} from "../components/DoubleSlider/DoubleSlider";
+import {selectFilters} from "../../features/filters/selectors";
+import {CLEAR_FORM} from "../../features/filters/actions";
+import {DoubleSlider} from "../DoubleSlider/DoubleSlider";
 import arrows from "img/icons/arrows-left.svg"
 
 export function Sidebar(){
@@ -22,7 +22,7 @@ export function Sidebar(){
                 <DoubleSlider key={1} />
             </div>
             <form className="sidebar__form"  data-element="form">
-                <FilterList filters={filters} />
+                    <FilterList filters={filters} />
             </form>
             <button className="btn btn--large-font btn--violet btn--full-width" data-element="button" onClick={() => dispatch({type: CLEAR_FORM})}>
                 CLEAR ALL FILTERS

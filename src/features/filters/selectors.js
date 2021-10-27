@@ -4,4 +4,3 @@ export const selectFilters = (state) => {
 export const selectActiveFilters = (state) => {
     return state.filters.filter(filter => filter.isChecked)
 }
-

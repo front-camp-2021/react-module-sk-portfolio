@@ -1,3 +1,3 @@
 export function selectCurrentPage(state){
-    return state.pages
+    return state.pages.currentPage
 }

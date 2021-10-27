@@ -1,25 +1,15 @@
-export {NEXT_PRODUCT_PAGE, PREV_PRODUCT_PAGE, SELECT_PRODUCT_PAGE, selectProductPage, nextProductPage, prevProductPage}
+
 
 const NEXT_PRODUCT_PAGE = "NEXT_PRODUCTS_PAGE"
 const PREV_PRODUCT_PAGE = "PREV_PRODUCT_PAGE"
 const SELECT_PRODUCT_PAGE = "SELECT_PRODUCT_PAGE"
+const GO_TO_START = "GO_TO_START"
 
-function selectProductPage(payload){
+function paginationAction(type, payload = []){
     return {
-        type : SELECT_PRODUCT_PAGE,
+        type : type,
         payload
     }
 }
-function nextProductPage(payload){
 
-    return {
-        type : NEXT_PRODUCT_PAGE,
-        payload
-    }
-}
-function prevProductPage(payload){
-    return {
-        type : PREV_PRODUCT_PAGE,
-        payload
-    }
-}
+export {NEXT_PRODUCT_PAGE, PREV_PRODUCT_PAGE, SELECT_PRODUCT_PAGE, GO_TO_START, paginationAction}

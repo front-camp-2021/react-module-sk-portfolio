@@ -12,7 +12,7 @@ export function DoubleSlider({min = 0, max = 500}) {
     const minValueRef = useRef(min)
     const maxValueRef = useRef(max)
     const rangeRef = useRef(null)
-    const getPercentValue = useCallback((value) => Math.round(value * 100 / max), [min, max])
+    const getPercentValue = useCallback((value) => Math.round(value * 100 / max), [max])
 
     const onSliderChanged = () => {
         dispatch(changeSliderRange({min: minValue, max: maxValue}))

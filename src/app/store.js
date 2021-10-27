@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from "redux";
-import {products} from "../features/products/reducers/products";
+import {products} from "../features/products/products";
 import {filters} from "../features/filters/reducers";
 import {sliders} from "../features/sliders/reducers";
 import {pages} from "../features/pages/reducers";

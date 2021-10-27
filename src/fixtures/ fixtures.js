@@ -1,24 +1,22 @@
-import {CHANGE_WISHLIST_STATUS, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_WISHLIST, CLEAR_CART} from '../actions/actions.js'
-
-export function products(state = productsInitialState, action) {
-    switch (action.type) {
-        case CHANGE_WISHLIST_STATUS:
-            return state.map((product) =>
-                product.id === action.payload ? {...product, isWished: !product.isWished} : product
-            )
-        case CLEAR_WISHLIST:
-            return state.map(product => {
-                return {
-                    ...product,
-                    isWished: false
-                }
-            })
-        default:
-            return state
-    }
+const FILTERS_INITIAL_STATE = [
+    "Asus",
+    "Acer",
+    "Apple",
+    "Dell",
+    "Dynamode",
+    "Gigabyte",
+    "Kingston",
+    "Lenovo",
+    "Logitech",
+    "MSI",
+    "BenQ",
+    "A4Tech"
+]
+const INITIAL_STATE_PAGINATION = {
+    currentPage: 1
 }
 
-export const productsInitialState = [
+const PRODUCTS_INITIAL_STATE = [
     {
         "id": "76w0hz7015kkr9kjkav",
         "images": [
@@ -30,7 +28,6 @@ export const productsInitialState = [
         "price": 15999,
         "category": "laptops",
         "brand": "acer",
-        "isWished": false
     },
     {
         "id": "nzbg9f3lqfkkr9kjkav",
@@ -273,3 +270,5 @@ export const productsInitialState = [
         "brand": "dynamode"
     },
 ]
+
+export {FILTERS_INITIAL_STATE, INITIAL_STATE_PAGINATION, PRODUCTS_INITIAL_STATE }

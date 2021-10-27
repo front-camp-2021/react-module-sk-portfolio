@@ -1,10 +1,12 @@
 import {useDispatch} from "react-redux";
-import {changeCheckedField} from "../features/filters/actions";
+import {changeCheckedField} from "../../features/filters/actions";
+import {GO_TO_START, paginationAction} from "../../features/pages/actions";
 
-export function Field({value, isChecked}){
+export function Field({value, name, isChecked}){
     const dispatch = useDispatch()
     const toggleCheckbox = () =>{
         dispatch(changeCheckedField(value))
+        dispatch(paginationAction(GO_TO_START))
     }
     return (
         <label className="field field--checkbox sidebar__field" data-element="field">

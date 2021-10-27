@@ -1,15 +1,22 @@
-import '../style.css'
+import '../../style.css'
 import {useDispatch} from "react-redux";
-import {actionChangeWishlistStatus} from '../features/products/actions/actions'
+import {
+    productCardAction,
+    CHANGE_WISHLIST_STATUS, CHANGE_TO_CART
+} from '../../features/products/actions'
 import heart from 'img/icons/heart.svg'
 import heartPainted from 'img/icons/heart-painted.svg'
 import basket from 'img/icons/bag.svg'
 import star from 'img/icons/star.svg'
+import crossBasket from 'img/icons/delete-from-cart.svg'
 
-export default function Card({id, title, images, rating, price, isWished, category, brand}) {
+export default function Card({id, title, images, rating, price, isWished, toCart, category, brand}) {
     const dispatch = useDispatch()
     const toggleToWishList = () => {
-        dispatch(actionChangeWishlistStatus(id))
+        dispatch(productCardAction(CHANGE_WISHLIST_STATUS,id))
+    }
+    const toggleToCart = () => {
+        dispatch(productCardAction(CHANGE_TO_CART,id))
     }
     return (
         <article className="product-card product-card--with-rating">
@@ -42,17 +49,27 @@ export default function Card({id, title, images, rating, price, isWished, catego
             </div>
             <div className="product-card__btns">
                 <button className="product-card__btn btn" onClick={toggleToWishList}>
-                    <img src={
-                        isWished ? heartPainted : heart
-                    } alt="heart"/>
+                    <img
+                        src={
+                            isWished ? heartPainted : heart
+                        }
+                        alt="heart"/>
                     <span>
                             WISHLIST
                         </span>
                 </button>
 
-                <button className="product-card__btn btn btn--violet">
-                    <img src={basket} alt="heart"/>
-                    <span>ADD TO CART</span>
+                <button className="product-card__btn btn btn--violet" onClick={toggleToCart}>
+                    <img
+                        src={
+                            toCart ? crossBasket : basket
+                        }
+                        alt="heart"/>
+                    <span>
+                        {
+                            toCart ? "DELETE FROM CART"  : "ADD TO CART"
+                        }
+                    </span>
                 </button>
             </div>
         </article>

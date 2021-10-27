@@ -1,7 +1,8 @@
-import {CLEAR_FORM, CHANGE_CHECKED_FIELD, CHANGE_SLIDER_RANGE} from "./actions";
+import {CLEAR_FORM, CHANGE_CHECKED_FIELD} from "./actions";
+import {FILTERS_INITIAL_STATE} from "fixtures/ fixtures"
 
 
-export function filters(state = getFilters(filtersInitialState), action) {
+export function filters(state = getFilters(FILTERS_INITIAL_STATE), action) {
     switch (action.type) {
         case CHANGE_CHECKED_FIELD :
             return state.map(filter =>{
@@ -18,21 +19,6 @@ export function filters(state = getFilters(filtersInitialState), action) {
             return state
     }
 }
-
-export const filtersInitialState = [
-    "Asus",
-    "Acer",
-    "Apple",
-    "Dell",
-    "Dynamode",
-    "Gigabyte",
-    "Kingston",
-    "Lenovo",
-    "Logitech",
-    "MSI",
-    "BenQ",
-    "A4Tech"
-]
 
 const getFilters = (filters) => {
     return filters.map(filter => {

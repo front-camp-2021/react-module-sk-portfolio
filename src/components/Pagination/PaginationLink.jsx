@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {selectProductPage} from "../../features/pages/actions";
+import {paginationAction, SELECT_PRODUCT_PAGE} from "../../features/pages/actions";
 
 export function PaginationLink({id, currentId}) {
     const dispatch = useDispatch()
@@ -7,7 +7,7 @@ export function PaginationLink({id, currentId}) {
     const currentClass = id === currentId ? "pagination__link--current" : ""
     return (
         <li className={`${defaultClass} ${currentClass}`}>
-            <button className="pagination__link" onClick={() => dispatch(selectProductPage(id))}/>
+            <button className="pagination__link" onClick={() => dispatch(paginationAction(SELECT_PRODUCT_PAGE,id))}/>
         </li>
     )
 }
