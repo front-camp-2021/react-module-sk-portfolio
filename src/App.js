@@ -15,7 +15,7 @@ function App() {
                 <Route exact path="/wishlist">
                     <WishList />
                 </Route>
-                <Route exact path="/cart-products">
+                <Route exact path="/cart">
                     <Cart />
                 </Route>
                 <Redirect to="./not-found"/>

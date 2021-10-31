@@ -1,12 +1,12 @@
 
 import {Field} from "./Field";
 
-export function FilterList({filters}){
+export function FilterList({title,filters}){
     return (
         <div className="sidebar__filter" data-element="body">
             <h3>
                 <strong>
-                    title
+                    {title}
                 </strong>
             </h3>
             {

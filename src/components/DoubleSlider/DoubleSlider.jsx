@@ -1,9 +1,9 @@
 import {changeSliderRange} from "../../features/sliders/actions";
 import {useCallback, useEffect, useRef, useState} from "react";
-import './DuobleSloder.css'
+import './DuobleSlider.css'
 import {useDispatch} from "react-redux";
 
-export function DoubleSlider({min = 0, max = 500}) {
+export function DoubleSlider({type ,min , max }) {
     const dispatch = useDispatch()
 
     const [minValue, setMin] = useState(min)
@@ -12,7 +12,7 @@ export function DoubleSlider({min = 0, max = 500}) {
     const minValueRef = useRef(min)
     const maxValueRef = useRef(max)
     const rangeRef = useRef(null)
-    const getPercentValue = useCallback((value) => Math.round(value * 100 / max), [max])
+    const getPercentValue = useCallback((value) => value * 100 / max   , [min, max])
 
     const onSliderChanged = () => {
         dispatch(changeSliderRange({min: minValue, max: maxValue}))
@@ -26,6 +26,7 @@ export function DoubleSlider({min = 0, max = 500}) {
     })
     return (
         <>
+            <span>{type}</span>
             <div className="slider">
                 <span>{minValue}</span>
                 <div className="slider__wrapper">

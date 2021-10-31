@@ -1,3 +1,3 @@
-export const selectChangedRange = (state) => {
-    return state.sliders.filter(slider => slider.min && slider.max)
+export const selectSliders = (state) => {
+    return state.sliders
 }

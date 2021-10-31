@@ -1,5 +1,5 @@
 import {NEXT_PRODUCT_PAGE, PREV_PRODUCT_PAGE, SELECT_PRODUCT_PAGE, GO_TO_START} from "./actions";
-import {INITIAL_STATE_PAGINATION} from "fixtures/ fixtures"
+import {INITIAL_STATE_PAGINATION} from "fixtures"
 
 export function pages(state = INITIAL_STATE_PAGINATION , action){
     switch (action.type){

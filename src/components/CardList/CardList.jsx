@@ -5,11 +5,11 @@ import {NUMBER_OF_PRODUCTS_ONE_PAGE} from "../../constants"
 import {selectCurrentPage} from "../../features/pages/selectors";
 import {setProductsPage} from "../../helpers/setProductsPage"
 
-export default function CardList( {filteredProducts}) {
+export default function CardList( {products}) {
     let currentPage = useSelector(selectCurrentPage)
 
 
-    const currentPageProducts = setProductsPage(filteredProducts, currentPage, NUMBER_OF_PRODUCTS_ONE_PAGE)
+    const currentPageProducts = setProductsPage(products, currentPage, NUMBER_OF_PRODUCTS_ONE_PAGE)
 
     return (
         <>

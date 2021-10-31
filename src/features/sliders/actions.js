@@ -1,9 +1,9 @@
 const CHANGE_SLIDER_RANGE = "CHANGE_SLIDER_RANGE"
 
-function changeSliderRange(payload){
+function changeSliderRange(type,payload){
     return{
-        type: CHANGE_SLIDER_RANGE,
-        payload
+        type: type,
+        payload: payload
     }
 }
 

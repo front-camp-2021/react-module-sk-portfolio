@@ -1,16 +1,13 @@
 import '../../style.css'
 import {useDispatch} from "react-redux";
-import {
-    productCardAction,
-    CHANGE_WISHLIST_STATUS, CHANGE_TO_CART
-} from '../../features/products/actions'
+import {productCardAction, CHANGE_WISHLIST_STATUS, CHANGE_TO_CART} from '../../features/products/actions'
 import heart from 'img/icons/heart.svg'
 import heartPainted from 'img/icons/heart-painted.svg'
 import basket from 'img/icons/bag.svg'
 import star from 'img/icons/star.svg'
 import crossBasket from 'img/icons/delete-from-cart.svg'
 
-export default function Card({id, title, images, rating, price, isWished, toCart, category, brand}) {
+export default function Card({id, title, images, rating, price, isWished, isCart, category, brand}) {
     const dispatch = useDispatch()
     const toggleToWishList = () => {
         dispatch(productCardAction(CHANGE_WISHLIST_STATUS,id))
@@ -62,12 +59,12 @@ export default function Card({id, title, images, rating, price, isWished, toCart
                 <button className="product-card__btn btn btn--violet" onClick={toggleToCart}>
                     <img
                         src={
-                            toCart ? crossBasket : basket
+                            isCart ? crossBasket : basket
                         }
                         alt="heart"/>
                     <span>
                         {
-                            toCart ? "DELETE FROM CART"  : "ADD TO CART"
+                            isCart ? "DELETE FROM CART"  : "ADD TO CART"
                         }
                     </span>
                 </button>
