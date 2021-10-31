@@ -12,9 +12,19 @@ const PRODUCTS_INITIAL_STATE = {
 
 const SLIDERS_INITIAL_STATE = [
     {
+        id: 1,
         type: 'price',
         min: 0,
         max: 50000,
+        step: 1,
+    },
+    {
+        id: 2,
+        type: 'price',
+        min: 0,
+        max: 10,
+        step: .125,
+        fraction: 2,
     },
 ]
 

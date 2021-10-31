@@ -3,7 +3,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import './DuobleSlider.css'
 import {useDispatch} from "react-redux";
 
-export function DoubleSlider({type ,min , max }) {
+export function DoubleSlider({type ,min , max, fraction, step }) {
     const dispatch = useDispatch()
 
     const [minValue, setMin] = useState(min)
@@ -12,7 +12,7 @@ export function DoubleSlider({type ,min , max }) {
     const minValueRef = useRef(min)
     const maxValueRef = useRef(max)
     const rangeRef = useRef(null)
-    const getPercentValue = useCallback((value) => value * 100 / max   , [min, max])
+    const getPercentValue = useCallback((value) => (value * 100 / max )   , [min, max])
 
     const onSliderChanged = () => {
         dispatch(changeSliderRange({min: minValue, max: maxValue}))
@@ -21,6 +21,8 @@ export function DoubleSlider({type ,min , max }) {
     useEffect(() => {
         const positionStart = getPercentValue(minValue)
         const positionEnd = getPercentValue(maxValue)
+        console.log(positionStart);
+        console.log(positionEnd)
         rangeRef.current.style.left = `${positionStart}%`
         rangeRef.current.style.width = `${positionEnd - positionStart}%`
     })
@@ -33,12 +35,13 @@ export function DoubleSlider({type ,min , max }) {
                     <div className="slider__inner">
                         <input
                             type="range"
+                            step={step}
                             min={min}
                             max={max}
                             value={minValueRef.current}
                             onChange={e => {
                                 const value = Math.min(Number(e.target.value), maxValue - 1)
-                                setMin(value)
+                                setMin(value.toFixed(fraction))
                                 minValueRef.current = minValue
                                 onSliderChanged()
                             }}
@@ -46,12 +49,13 @@ export function DoubleSlider({type ,min , max }) {
                         />
                         <input
                             type="range"
+                            step={step}
                             min={min}
                             max={max}
                             value={maxValueRef.current}
                             onChange={e => {
                                 const value = Math.max(Number(e.target.value), minValue + 1)
-                                setMax(value)
+                                setMax(value.toFixed(fraction))
                                 maxValueRef.current = maxValue
                                 onSliderChanged()
                             }}

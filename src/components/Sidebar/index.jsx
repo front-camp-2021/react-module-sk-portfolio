@@ -27,7 +27,7 @@ export function Sidebar(){
             </div>
             <div className="sidebar__range-sliders" data-element="slidersWrapper">
                 {
-                    sliders.map(slider => <DoubleSlider key={slider.type} type={slider.type} min={slider.min} max={slider.max} />)
+                    sliders.map(slider => <DoubleSlider key={slider.id} type={slider.type} min={slider.min} max={slider.max} step={slider.step} />)
                 }
             </div>
             <form className="sidebar__form"  data-element="form">
