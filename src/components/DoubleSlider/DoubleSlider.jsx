@@ -12,7 +12,7 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
     const minValueRef = useRef(min)
     const maxValueRef = useRef(max)
     const rangeRef = useRef(null)
-    const getPercentValue = useCallback((value) => (value * 100 / max )   , [min, max])
+    const getPercentValue = useCallback((value) => value * 100 / max   , [min, max])
 
     const onSliderChanged = () => {
         dispatch(changeSliderRange({min: minValue, max: maxValue}))
@@ -30,7 +30,7 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
         <>
             <span>{type}</span>
             <div className="slider">
-                <span>{minValue}</span>
+                <span>{minValue.toFixed(fraction)}</span>
                 <div className="slider__wrapper">
                     <div className="slider__inner">
                         <input
@@ -41,7 +41,7 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
                             value={minValueRef.current}
                             onChange={e => {
                                 const value = Math.min(Number(e.target.value), maxValue - 1)
-                                setMin(value.toFixed(fraction))
+                                setMin(value)
                                 minValueRef.current = minValue
                                 onSliderChanged()
                             }}
@@ -55,7 +55,7 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
                             value={maxValueRef.current}
                             onChange={e => {
                                 const value = Math.max(Number(e.target.value), minValue + 1)
-                                setMax(value.toFixed(fraction))
+                                setMax(value)
                                 maxValueRef.current = maxValue
                                 onSliderChanged()
                             }}
@@ -67,7 +67,7 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
                         <div ref={rangeRef} className="slider__range"/>
                     </div>
                 </div>
-                <span>{maxValue}</span>
+                <span>{maxValue.toFixed(fraction)}</span>
             </div>
         </>
     )

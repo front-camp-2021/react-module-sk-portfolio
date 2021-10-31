@@ -17,13 +17,14 @@ const SLIDERS_INITIAL_STATE = [
         min: 0,
         max: 50000,
         step: 1,
+        fraction: 0,
     },
     {
         id: 2,
-        type: 'price',
+        type: 'rating',
         min: 0,
-        max: 10,
-        step: .125,
+        max: 5,
+        step: .25,
         fraction: 2,
     },
 ]
