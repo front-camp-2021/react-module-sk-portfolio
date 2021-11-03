@@ -7,27 +7,32 @@ const INITIAL_STATE_PAGINATION = {
 }
 
 const PRODUCTS_INITIAL_STATE = {
-    productsList: []
+    productsAll:[],
+    productsSearch:[],
+    productsFiltered:[],
 }
-
-const SLIDERS_INITIAL_STATE = [
-    {
+const SLIDERS_INITIAL_STATE = {
+    price:{
         id: 1,
         type: 'price',
         min: 0,
         max: 50000,
+        currentMin:0,
+        currentMax:50000,
         step: 1,
         fraction: 0,
     },
-    {
+    rating:{
         id: 2,
         type: 'rating',
         min: 0,
         max: 5,
+        currentMin:0,
+        currentMax:5,
         step: .25,
         fraction: 2,
     },
-]
+}
 
 const URL_PRODUCTS = new URL('http://localhost:3001/products')
 const URL_CATEGORIES = new URL('http://localhost:3001/categories')

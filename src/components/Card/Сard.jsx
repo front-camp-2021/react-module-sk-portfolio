@@ -1,5 +1,5 @@
 import '../../style.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {productCardAction, CHANGE_WISHLIST_STATUS, CHANGE_TO_CART} from '../../features/products/actions'
 import heart from 'img/icons/heart.svg'
 import heartPainted from 'img/icons/heart-painted.svg'

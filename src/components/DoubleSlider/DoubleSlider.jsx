@@ -1,4 +1,4 @@
-import {changeSliderRange} from "../../features/sliders/actions";
+import {CHANGE_SLIDER_RANGE, changeSliderRange} from "features/sliders/actions";
 import {useCallback, useEffect, useRef, useState} from "react";
 import './DuobleSlider.css'
 import {useDispatch} from "react-redux";
@@ -15,14 +15,12 @@ export function DoubleSlider({type ,min , max, fraction, step }) {
     const getPercentValue = useCallback((value) => value * 100 / max   , [min, max])
 
     const onSliderChanged = () => {
-        dispatch(changeSliderRange({min: minValue, max: maxValue}))
+        dispatch(changeSliderRange(CHANGE_SLIDER_RANGE,{type: type, min: minValue, max: maxValue}))
     }
 
     useEffect(() => {
         const positionStart = getPercentValue(minValue)
         const positionEnd = getPercentValue(maxValue)
-        console.log(positionStart);
-        console.log(positionEnd)
         rangeRef.current.style.left = `${positionStart}%`
         rangeRef.current.style.width = `${positionEnd - positionStart}%`
     })

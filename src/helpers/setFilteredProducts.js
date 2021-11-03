@@ -1,9 +1,11 @@
-export const setFilteredProducts = (products = [], filters = []) => {
-    if (filters.length === 0) {
-        return products
-    } else {
-        return products.filter(product =>
-            filters.some(filter => product.category === filter.name.toLowerCase() || product.brand === filter.name.toLowerCase() ? product : null)
+export const setFilteredProducts = (productsFiltered= [], productSearch = []) => {
+    if (productsFiltered.length === 0) {
+        return productSearch
+    } else if (productSearch.length === 0) {
+        return productsFiltered
+    } else{
+        return productsFiltered.filter(product =>
+            productSearch.some(productSearch => productSearch.id === product.id)
         )
     }
 }

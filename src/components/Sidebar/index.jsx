@@ -6,11 +6,12 @@ import {DoubleSlider} from "../DoubleSlider/DoubleSlider";
 import arrows from "img/icons/arrows-left.svg"
 import {useEffect} from "react";
 import {selectSliders} from "../../features/sliders/selectors";
+import {SLIDERS_INITIAL_STATE} from "fixtures";
 
 export function Sidebar(){
     const filtersState = useSelector(selectFilters)
     const filterListsProps = Object.entries(filtersState)
-    const sliders = useSelector(selectSliders)
+    const sliders = Object.values(SLIDERS_INITIAL_STATE)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getFilters())

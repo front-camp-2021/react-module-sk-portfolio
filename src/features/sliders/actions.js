@@ -1,5 +1,4 @@
-const CHANGE_SLIDER_RANGE = "CHANGE_SLIDER_RANGE"
-
+const CHANGE_SLIDER_RANGE = "CHANGE_PRICE_RANGE"
 function changeSliderRange(type,payload){
     return{
         type: type,

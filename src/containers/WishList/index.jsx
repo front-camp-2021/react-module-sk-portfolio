@@ -6,6 +6,7 @@ import {numberOfPages} from "../../helpers/numberOfPages";
 import {NUMBER_OF_PRODUCTS_ONE_PAGE} from "../../constants";
 import {Pagination} from "../../components/Pagination/Pagination";
 import {useHistory} from "react-router-dom"
+import {getProductsId} from "../../helpers/getProductsId";
 
 const START_PAGE = 1
 
@@ -13,7 +14,6 @@ export function WishList() {
     const products = useSelector(selectProducts("wishlist"))
     const history = useHistory()
     const dispatch = useDispatch()
-
     const onClearWishList = () => {
         dispatch(productCardAction(CLEAR_WISHLIST))
         history.push('/')
@@ -24,6 +24,7 @@ export function WishList() {
     return (
         <section className={"products-list"}>
             <div className="container ">
+                <button onClick={() =>  history.push('/')}>back to home</button>
                 <button className={"btn btn--violet btn--border-radius btn--large clear-wishlist"} onClick={onClearWishList}>Clear all items</button>
                 <div className="products products-list__main">
                     <CardList products={products} startPage={START_PAGE}/>
