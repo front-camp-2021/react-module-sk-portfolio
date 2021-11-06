@@ -1,9 +1,9 @@
-export const setFilteredProducts = (productsFiltered= [], productSearch = []) => {
-    if (productsFiltered.length === 0) {
+export const setFilteredProducts = (productsFiltered = [], productSearch = [], searchValue = "") => {
+    if (productsFiltered.length === 0 || searchValue.length !== 0) {
         return productSearch
     } else if (productSearch.length === 0) {
         return productsFiltered
-    } else{
+    } else {;
         return productsFiltered.filter(product =>
             productSearch.some(productSearch => productSearch.id === product.id)
         )

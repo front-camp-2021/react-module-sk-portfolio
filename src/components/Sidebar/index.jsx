@@ -2,10 +2,9 @@ import {FilterList} from "./FilterList";
 import {useDispatch, useSelector} from "react-redux";
 import {selectFilters} from "../../features/filters/selectors";
 import {CLEAR_FORM, getFilters} from "../../features/filters/actions";
-import {DoubleSlider} from "../DoubleSlider/DoubleSlider";
+import {DoubleSlider} from "../DoubleSlider";
 import arrows from "img/icons/arrows-left.svg"
 import {useEffect} from "react";
-import {selectSliders} from "../../features/sliders/selectors";
 import {SLIDERS_INITIAL_STATE} from "fixtures";
 
 export function Sidebar(){

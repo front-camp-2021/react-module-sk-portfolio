@@ -1,5 +1,5 @@
 import '../../style.css'
-import Card from '../Card/Сard'
+import Card from '../Card'
 import {useSelector} from "react-redux";
 import {NUMBER_OF_PRODUCTS_ONE_PAGE} from "../../constants"
 import {selectCurrentPage} from "../../features/pages/selectors";
