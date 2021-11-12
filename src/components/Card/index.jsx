@@ -1,14 +1,18 @@
 import 'style.css'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {productCardAction, CHANGE_WISHLIST_STATUS, CHANGE_TO_CART} from '../../features/products/actions'
 import heart from 'img/icons/heart.svg'
 import heartPainted from 'img/icons/heart-painted.svg'
 import basket from 'img/icons/bag.svg'
 import star from 'img/icons/star.svg'
 import crossBasket from 'img/icons/delete-from-cart.svg'
+import { Link } from 'react-router-dom';
 
 export default function Card({id, title, images, rating, price, isWished, isCart, category, brand}) {
     const dispatch = useDispatch()
+
+
+
     const toggleToWishList = () => {
         dispatch(productCardAction(CHANGE_WISHLIST_STATUS,id))
     }
@@ -34,14 +38,14 @@ export default function Card({id, title, images, rating, price, isWished, isCart
                             ${price}
                         </div>
                     </div>
-                    <div className="product-card__description">
+                    <Link to={`/product/${id}`} className="product-card__description">
                         <h3>
                             {title}
                         </h3>
                         <p>
                             Redesigned from scratch and completely revised.
                         </p>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <div className="product-card__btns">
