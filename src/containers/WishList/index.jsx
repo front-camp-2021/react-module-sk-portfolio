@@ -8,20 +8,29 @@ import { Pagination } from "components/Pagination";
 import { useHistory } from "react-router-dom"
 import { Header } from "components/Header";
 import { BreadCrumps } from "components/BreadCrumps";
+import { useEffect } from "react";
+import {getProducts } from 'features/products/actions.js'
 
 
 const START_PAGE = 1
 
 export function WishList() {
-    const products = useSelector(selectProducts("wishlist"))
+    const products = useSelector(selectProducts("all"))
+    const wishList = products.filter(({isWished}) => isWished)
+
     const history = useHistory()
     const dispatch = useDispatch()
     const onClearWishList = () => {
+        localStorage.removeItem('wishlist')
         dispatch(productCardAction(CLEAR_WISHLIST))
         history.push('/')
     }
 
-    const isNeededPagination = numberOfPages(products, NUMBER_OF_PRODUCTS_ONE_PAGE) > 1
+    useEffect(() => {
+        dispatch(getProducts('http://localhost:3001/products'))
+    }, []);
+
+    const isNeededPagination = numberOfPages(wishList, NUMBER_OF_PRODUCTS_ONE_PAGE) > 1
 
     return (
         <>
@@ -29,11 +38,12 @@ export function WishList() {
             <section className={"products-list"}>
                 <div className="container ">
                 <BreadCrumps />
-                    <button onClick={() => history.push('/')}>back to home</button>
+                    <button className="btn btn--large btn--border-radius btn--violet  clear-wishlist" onClick={() => history.push('/cart') }>go to cart</button>
+                    <button className="btn btn--large btn--border-radius  clear-wishlist" onClick={() => history.push('/') }>back to home</button>
                     <button className={"btn btn--violet btn--border-radius btn--large clear-wishlist"} onClick={onClearWishList}>Clear all items</button>
                     <div className="products products-list__main">
-                        <CardList products={products} startPage={START_PAGE} />
-                        {isNeededPagination ? <Pagination numberOfPages={numberOfPages(products, NUMBER_OF_PRODUCTS_ONE_PAGE)} /> : null}
+                        <CardList products={wishList} startPage={START_PAGE} />
+                        {isNeededPagination ? <Pagination numberOfPages={numberOfPages(wishList, NUMBER_OF_PRODUCTS_ONE_PAGE)} /> : null}
                     </div>
                 </div>
             </section>

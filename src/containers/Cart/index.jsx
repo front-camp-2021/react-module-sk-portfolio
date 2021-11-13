@@ -12,11 +12,11 @@ import { BreadCrumps } from "components/BreadCrumps";
 const START_PAGE = 1
 
 export function Cart() {
-    const products = useSelector(selectProducts("cart"))
+    const products = useSelector(selectProducts('cart'))
     let history = useHistory()
     const dispatch = useDispatch()
-
     const onClearCartList = () => {
+        localStorage.removeItem('cart')
         dispatch(productCardAction(CLEAR_CART))
         history.push('/')
     }
@@ -28,10 +28,11 @@ export function Cart() {
             <Header />
             <section className={"reducer-list"}>
                 <div className="container ">
-                <BreadCrumps />
+                    <BreadCrumps />
+                    <button className="btn btn--large btn--border-radius" onClick={() => history.push('/') }>back to home</button>
                     <button className={"btn btn--violet btn--border-radius btn--large clear-wishlist"} onClick={onClearCartList}>Clear all items</button>
                     <div className="products products-list__main">
-                        <CardList products={products} startPage={START_PAGE} />
+                        <CardList products={products} startPage={START_PAGE} isCart/>
                         {isNeededPagination ? <Pagination numberOfPages={numberOfPages(products, NUMBER_OF_PRODUCTS_ONE_PAGE)} /> : null}
                     </div>
                 </div>

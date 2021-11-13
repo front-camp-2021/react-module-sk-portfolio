@@ -5,7 +5,8 @@ import {NUMBER_OF_PRODUCTS_ONE_PAGE} from "../../constants"
 import {selectCurrentPage} from "../../features/pages/selectors";
 import {setProductsPage} from "../../helpers/setProductsPage"
 
-export default function CardList({products}) {
+export default function CardList({products, isCart}) {
+    
     let currentPage = useSelector(selectCurrentPage)
     const currentPageProducts = setProductsPage(products, currentPage, NUMBER_OF_PRODUCTS_ONE_PAGE)
     return (
@@ -13,8 +14,9 @@ export default function CardList({products}) {
                 {
                     currentPageProducts.map(product =>{
                         return <Card
-                            key={product.id}
-                            {...product}
+                            key={isCart ? product.uniqId : product.id}
+                            product={{...product}}
+                            isCart={isCart}
                         />})
                 }
             </div>

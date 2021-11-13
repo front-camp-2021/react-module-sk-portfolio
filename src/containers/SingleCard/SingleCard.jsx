@@ -1,7 +1,4 @@
 
-import axios from "axios";
-import Card from "components/Card"
-import { URL_PRODUCTS } from "fixtures/index"
 import { useEffect } from "react";
 import { useParams } from "react-router"
 import {useDispatch} from "react-redux"

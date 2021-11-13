@@ -11,7 +11,7 @@ import { NUMBER_OF_PRODUCTS_ONE_PAGE } from "../../constants";
 import { GO_TO_START, paginationAction } from "../../features/pages/actions";
 import { useEffect, useState } from "react";
 import { getRequestUrl } from "../../helpers/setRequestUrl";
-import { getProducts, getFilteredProducts } from 'features/products/actions.js'
+import {getProducts } from 'features/products/actions.js'
 import { getProductsFromRange } from "../../helpers/getProductsFromRange";
 import basket from 'img/icons/bag.svg'
 import { selectProducts } from "../../features/products/selector";
@@ -35,13 +35,11 @@ export function Home() {
     const products = getProductsFromRange(productsList, sliders)
  
     const url = getRequestUrl('http://localhost:3001/products', filters)
+   
 
     useEffect(() => {
-        dispatch(getFilteredProducts(url))
+        dispatch(getProducts(url))
     }, [url])
-    useEffect(() => {
-        dispatch(getProducts())
-    }, [])
 
     function goToWishlist() {
         history.push("/wishlist")
