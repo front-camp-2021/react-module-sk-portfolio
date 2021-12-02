@@ -16,7 +16,6 @@ import uuid from "react-uuid";
 
 export default function Card({ product, isCart }) {
   const dispatch = useDispatch();
-
   const handleAddToWishList = () => {
     dispatch(addToWishlist(product.id));
   };
@@ -36,7 +35,7 @@ export default function Card({ product, isCart }) {
     <article className="product-card product-card--with-rating">
       <div className="product-card__main">
         <div className="product-card__img">
-          <img src={product.images[0]} alt={"product"} />
+          <img src={`${product.images[0]}`} alt={"product"} />
         </div>
         <div className="product-card__info">
           <div className="product-card__wr">

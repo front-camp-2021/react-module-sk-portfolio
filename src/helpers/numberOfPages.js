@@ -1,3 +1,3 @@
 export function numberOfPages(products, numberOfProducts) {
-    return Math.ceil(products.length / numberOfProducts)
+  return Math.ceil(products / numberOfProducts);
 }

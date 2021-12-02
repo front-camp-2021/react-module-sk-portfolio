@@ -3,7 +3,6 @@ import {
   ADD_TO_CART,
   CLEAR_CART,
   CLEAR_WISHLIST,
-  SEARCH_VALUE_CHANGE,
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,
   REMOVE_FROM_CART,
@@ -15,7 +14,8 @@ export function products(state = PRODUCTS_INITIAL_STATE, action) {
     case GET_PRODUCTS:
       return {
         ...state,
-        products: action.payload,
+        numberOfProducts: action.payload.numberOfProducts,
+        products: action.payload.products,
       };
     case ADD_TO_WISHLIST:
       return {
@@ -61,11 +61,6 @@ export function products(state = PRODUCTS_INITIAL_STATE, action) {
       return {
         ...state,
         cartProducts: (state.cartProducts = []),
-      };
-    case SEARCH_VALUE_CHANGE:
-      return {
-        ...state,
-        productsSearch: action.payload,
       };
     default:
       return state;

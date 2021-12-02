@@ -8,9 +8,10 @@ const INITIAL_STATE_PAGINATION = {
 
 const PRODUCTS_INITIAL_STATE = {
   products: [],
-  productsSearch: [],
+  numberOfProducts: 0,
   cartProducts: JSON.parse(localStorage.getItem("cart")) || [],
 };
+const SEARCH_INITIAL_STATE = "";
 const SLIDERS_INITIAL_STATE = {
   price: {
     id: 1,
@@ -19,7 +20,7 @@ const SLIDERS_INITIAL_STATE = {
     max: 100000,
     currentMin: 0,
     currentMax: 100000,
-    step: 1,
+    step: 100,
     fraction: 0,
   },
   rating: {
@@ -29,14 +30,16 @@ const SLIDERS_INITIAL_STATE = {
     max: 5,
     currentMin: 0,
     currentMax: 5,
-    step: 0.25,
+    step: 0.5,
     fraction: 2,
   },
 };
 
-const URL_PRODUCTS = new URL("http://localhost:3001/products");
-const URL_CATEGORIES = new URL("http://localhost:3001/categories");
-const URL_BRANDS = new URL("http://localhost:3001/brands");
+const URL_SEARCH = new URL("http://localhost:5000/search");
+const URL_WISHLIST = new URL("http://localhost:5000/wish-products");
+const URL_PRODUCTS = new URL("http://localhost:5000/products");
+const URL_CATEGORIES = new URL("http://localhost:5000/categories");
+const URL_BRANDS = new URL("http://localhost:5000/brands");
 
 export {
   FILTERS_INITIAL_STATE,
@@ -45,5 +48,8 @@ export {
   SLIDERS_INITIAL_STATE,
   URL_PRODUCTS,
   URL_CATEGORIES,
+  SEARCH_INITIAL_STATE,
   URL_BRANDS,
+  URL_SEARCH,
+  URL_WISHLIST,
 };

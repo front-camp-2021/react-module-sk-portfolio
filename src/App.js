@@ -4,7 +4,7 @@ import { Home } from "containers/Home";
 import { WishList } from "containers/WishList";
 import { Cart } from "./containers/Cart";
 import { NotFound } from "containers/notFound/notFound";
-// import { SingleCard } from "containers/SingleCard/SingleCard";
+import { SingleCard } from "containers/SingleCard/SingleCard";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Cart />
         </Route>
         <Route path="/not-found" component={NotFound} />
-        <Route path="/product/:id">{/* <SingleCard /> */}</Route>
+        <Route path="/product/:id" component={SingleCard} />
         <Redirect to="./not-found" />
       </Switch>
     </BrowserRouter>
