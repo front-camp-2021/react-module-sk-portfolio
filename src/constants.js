@@ -1,1 +1,0 @@
-export const NUMBER_OF_PRODUCTS_ONE_PAGE = 9

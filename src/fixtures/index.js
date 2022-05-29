@@ -5,7 +5,7 @@ const FILTERS_INITIAL_STATE = {
 const INITIAL_STATE_PAGINATION = {
   currentPage: 1,
 };
-
+const NUMBER_OF_PRODUCTS_ONE_PAGE = 9
 const PRODUCTS_INITIAL_STATE = {
   products: [],
   numberOfProducts: 0,
@@ -52,4 +52,5 @@ export {
   URL_BRANDS,
   URL_SEARCH,
   URL_WISHLIST,
+  NUMBER_OF_PRODUCTS_ONE_PAGE
 };
