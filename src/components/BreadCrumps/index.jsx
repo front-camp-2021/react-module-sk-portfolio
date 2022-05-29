@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import classes from './BreadCrumps.module.scss'
 
 export function BreadCrumps() {
   return (
-    <ul className="products-list__bread-cramps bread-cramps">
-      <li className="bread-cramps__item">
-        <Link className="bread-cramps__link" to="/">
+    <ul className={ 'products-list__bread-cramps' + ' ' + classes['bread-cramps']}>
+      <li className={classes['bread-cramps__item']}>
+        <Link className={classes['bread-cramps__link']} to="/">
           <svg
             width="17"
             height="17"
@@ -29,13 +30,13 @@ export function BreadCrumps() {
           </svg>
         </Link>
       </li>
-      <li className="bread-cramps__item">
-        <Link className="bread-cramps__link" to="/eCommerce">
+      <li className={classes['bread-cramps__item']}>
+        <Link className={classes['bread-cramps__link']} to="/eCommerce">
           eCommerce
         </Link>
       </li>
-      <li className="bread-cramps__item">
-        <Link className="bread-cramps__link" to="/Electronics">
+      <li className={classes['bread-cramps__item']}>
+        <Link className={classes['bread-cramps__link']} to="/Electronics">
           Electronics
         </Link>
       </li>

@@ -6,6 +6,7 @@ import { DoubleSlider } from "../DoubleSlider";
 import arrows from "img/icons/arrows-left.svg";
 import { useEffect } from "react";
 import { SLIDERS_INITIAL_STATE } from "fixtures";
+import classes from './Sidebar.module.scss'
 
 export function Sidebar() {
   const filtersState = useSelector(selectFilters);
@@ -18,14 +19,14 @@ export function Sidebar() {
   }, []);
 
   return (
-    <aside className="sidebar products-list__sidebar" data-element="body">
-      <div className="sidebar__head">
+    <aside className={classes.sidebar} data-element="body">
+      <div className={classes['sidebar__head']}>
         <h3>Filters</h3>
         <button className="btn btn--only-img btn--white-bg">
           <img src={arrows} alt={"close"} />
         </button>
       </div>
-      <div className="sidebar__range-sliders" data-element="slidersWrapper">
+      <div className={classes['sidebar__range-sliders']} data-element="slidersWrapper">
         {sliders.map((slider) => (
           <DoubleSlider
             key={slider.id}
@@ -37,7 +38,7 @@ export function Sidebar() {
           />
         ))}
       </div>
-      <form className="sidebar__form" data-element="form">
+      <form className={classes['sidebar__form']} data-element="form">
         {filterListsProps.map((data) => (
           <FilterList key={data[0]} title={data[0]} filters={data[1]} />
         ))}

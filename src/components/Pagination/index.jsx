@@ -8,6 +8,7 @@ import {
 import { selectCurrentPage } from "../../features/pages/selectors";
 import { setPageNumbers } from "../../helpers/setPagesNumbers";
 import arrow from "img/icons/arrow-left.svg";
+import classes from "./Pagination.module.scss" 
 
 export function Pagination({ numberOfPages }) {
   const dispatch = useDispatch();
@@ -18,24 +19,24 @@ export function Pagination({ numberOfPages }) {
 
   return (
     <nav
-      className="products-list__pagination pagination"
+      className={'products-list__pagination' + ' ' + classes.pagination}
       data-element="wrapper"
     >
       <button
-        className="pagination__btn pagination__btn--left"
+        className={classes['pagination__btn'] + ' ' + classes['pagination__btn--left']}
         data-element="prev"
         onClick={goPrev}
         disabled={currentPage === 1}
       >
         <img src={arrow} alt={"previous page"} />
       </button>
-      <ul className="pagination__list" data-element="list">
+      <ul className={classes['pagination__list']} data-element="list">
         {setPageNumbers(numberOfPages).map((number) => (
           <PaginationLink key={number} id={number} currentId={currentPage} />
         ))}
       </ul>
       <button
-        className="pagination__btn pagination__btn--right"
+        className={classes['pagination__btn'] + ' ' + classes['pagination__btn--right']}
         data-element="next"
         onClick={goNext}
         disabled={currentPage === numberOfPages}

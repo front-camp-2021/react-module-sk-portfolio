@@ -1,8 +1,9 @@
-import { Field } from "./Field";
+import { Field } from "./Field/Field";
+import classes from './Sidebar.module.scss'
 
 export function FilterList({ title, filters }) {
   return (
-    <div className="sidebar__filter">
+    <div className={classes['sidebar__filter']}>
       <h3>
         <strong>{title}</strong>
       </h3>

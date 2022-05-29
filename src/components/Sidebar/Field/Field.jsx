@@ -2,8 +2,10 @@ import { useDispatch } from "react-redux";
 import {
   CHANGE_CHECKED_FIELD,
   fieldsAction,
-} from "../../features/filters/actions";
-import { GO_TO_START, paginationAction } from "../../features/pages/actions";
+} from "../../../features/filters/actions";
+import { GO_TO_START, paginationAction } from "../../../features/pages/actions";
+import sidebarClasses from '../Sidebar.module.scss'
+import classes from './Field.module.scss'
 
 export function Field({ value, isChecked, type }) {
   const dispatch = useDispatch();
@@ -14,7 +16,7 @@ export function Field({ value, isChecked, type }) {
   };
   return (
     <label
-      className="field field--checkbox sidebar__field"
+      className={`${classes['field']} ${classes['field--checkbox']} ${sidebarClasses['sidebar__field']}`}
       data-element="field"
     >
       <input

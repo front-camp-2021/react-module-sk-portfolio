@@ -13,6 +13,7 @@ import crossBasket from "img/icons/delete-from-cart.svg";
 import star from "img/icons/star.svg";
 import { Link } from "react-router-dom";
 import uuid from "react-uuid";
+import classes from "./Card.module.scss"
 
 export default function Card({ product, isCart }) {
   const dispatch = useDispatch();
@@ -32,35 +33,35 @@ export default function Card({ product, isCart }) {
     dispatch(removeFromCart(product.uniqId));
   };
   return (
-    <article className="product-card product-card--with-rating">
-      <div className="product-card__main">
-        <div className="product-card__img">
+    <article className={classes['product-card'] + ' ' + classes['product-card--with-rating']}>
+      <div className={classes['product-card__main']}>
+        <div className={classes['product-card__img']}>
           <img src={`${product.images[0]}`} alt={"product"} />
         </div>
-        <div className="product-card__info">
-          <div className="product-card__wr">
-            <div className="product-card__rating">
+        <div className={classes['product-card__info']}>
+          <div className={classes['product-card__wr']}>
+            <div className={classes['product-card__rating']}>
               <span>{product.rating}</span>
 
               <img src={star} alt="rating-star" />
             </div>
-            <div className="product-card__price">${product.price}</div>
+            <div className={classes['product-card__price']}>${product.price}</div>
           </div>
           <Link
             to={`/product/${product.id}`}
-            className="product-card__description"
+            className={classes['product-card__description']}
           >
             <h3>{product.title}</h3>
             <p>Redesigned from scratch and completely revised.</p>
           </Link>
         </div>
       </div>
-      <div className="product-card__btns">
+      <div className={classes['product-card__btns']}>
         <button
           aria-label={
             product.isWished ? "remove from wishlist" : "add to wishlist"
           }
-          className="product-card__btn btn"
+          className={classes['product-card__btn']+ ' btn'}
           onClick={
             product.isWished ? handleRemoveFromWishList : handleAddToWishList
           }
@@ -71,7 +72,7 @@ export default function Card({ product, isCart }) {
 
         <button
           aria-label={isCart ? "remove from cart" : "add to cart"}
-          className="product-card__btn btn btn--violet"
+          className={classes['product-card__btn'] + ' btn btn--violet'}
           onClick={isCart ? handleRemoveFromCart : handleAddToCart}
         >
           <img src={isCart ? crossBasket : basket} alt="cart" />

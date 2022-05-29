@@ -3,7 +3,7 @@ import {
   changeSliderRange,
 } from "features/sliders/actions";
 import { useCallback, useEffect, useRef, useState } from "react";
-import "./DuobleSlider.css";
+import classes from "./DuobleSlider.module.scss";
 import { useDispatch } from "react-redux";
 
 export function DoubleSlider({ type, min, max, fraction, step }) {
@@ -39,10 +39,10 @@ export function DoubleSlider({ type, min, max, fraction, step }) {
   return (
     <>
       <span>{type}</span>
-      <div className="slider">
+      <div className={classes.slider}>
         <span>{minValue.toFixed(fraction)}</span>
-        <div className="slider__wrapper">
-          <div className="slider__inner">
+        <div className={classes["slider__wrapper"]}>
+          <div className={classes["slider__inner"]}>
             <input
               type="range"
               step={step}
@@ -55,7 +55,7 @@ export function DoubleSlider({ type, min, max, fraction, step }) {
                 const value = Math.min(Number(e.target.value), maxValue - 1);
                 setMin(value);
               }}
-              className="thumb thumb--left"
+              className={`${classes.thumb} ${classes['thumb--left']}`}
             />
             <input
               type="range"
@@ -69,10 +69,10 @@ export function DoubleSlider({ type, min, max, fraction, step }) {
                 setMax(value);
                 maxValueRef.current = maxValue;
               }}
-              className="thumb thumb--right"
+              className={`${classes.thumb} ${classes['thumb--right']}`}
             />
-            <div className="slider__track" />
-            <div ref={rangeRef} className="slider__range" />
+            <div className={classes['slider__track']} />
+            <div ref={rangeRef} className={classes['slider__range']} />
           </div>
         </div>
         <span>{maxValue.toFixed(fraction)}</span>

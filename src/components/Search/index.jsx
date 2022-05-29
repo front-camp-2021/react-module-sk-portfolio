@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { debounce } from "helpers/debounce";
 import { changeSearchValue } from "features/search/action";
+import classes from './Search.module.scss'
 
 export function Search({ setSearchValue }) {
   const [value, setValue] = useState("");
@@ -17,7 +18,7 @@ export function Search({ setSearchValue }) {
   };
   return (
     <form
-      className="products__search search"
+      className={classes.search}
       onSubmit={(e) => {
         onSearch(e);
         updateSearchValue(value);
