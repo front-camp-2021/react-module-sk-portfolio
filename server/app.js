@@ -15,6 +15,10 @@ const wishProducts = require("./routes/wish-products");
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
@@ -25,4 +29,4 @@ app.use("/categories", categories);
 app.use("/search", search);
 app.use("/wish-products", wishProducts);
 
-app.listen(port, () => {});
+app.listen(proccess.env.PORT || port, () => { });
