@@ -1,1 +1,1 @@
-worker:npm run watch
+worker:node server/app.js
