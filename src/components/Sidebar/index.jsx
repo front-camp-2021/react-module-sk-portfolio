@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFilters } from "../../features/filters/selectors";
 import { CLEAR_FORM, getFilters } from "../../features/filters/actions";
 import { DoubleSlider } from "../DoubleSlider";
-import arrows from "img/icons/arrows-left.svg";
 import { useEffect } from "react";
 import { SLIDERS_INITIAL_STATE } from "fixtures";
 import classes from './Sidebar.module.scss'
@@ -22,9 +21,6 @@ export function Sidebar() {
     <aside className={classes.sidebar} data-element="body">
       <div className={classes['sidebar__head']}>
         <h3>Filters</h3>
-        <button className="btn btn--only-img btn--white-bg">
-          <img src={arrows} alt={"close"} />
-        </button>
       </div>
       <div className={classes['sidebar__range-sliders']} data-element="slidersWrapper">
         {sliders.map((slider) => (

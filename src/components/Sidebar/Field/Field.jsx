@@ -25,9 +25,9 @@ export function Field({ value, isChecked, type }) {
         value={value}
         onChange={toggleCheckbox}
       />
-      <span className="field__checkbox-substitute"></span>
-      <span className="field__info">
-        <span className="field__name">{value}</span>
+      <span className={classes['field__checkbox-substitute']}></span>
+      <span className={classes['field__info']}>
+        <span className={classes['field__name']}>{value}</span>
       </span>
     </label>
   );

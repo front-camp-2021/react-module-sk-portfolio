@@ -33,7 +33,7 @@ export default function Card({ product, isCart }) {
     dispatch(removeFromCart(product.uniqId));
   };
   return (
-    <article className={classes['product-card'] + ' ' + classes['product-card--with-rating']}>
+    <article className={`${classes['product-card']} ${classes['product-card--with-rating']}`}>
       <div className={classes['product-card__main']}>
         <div className={classes['product-card__img']}>
           <img src={`${product.images[0]}`} alt={"product"} />
@@ -61,7 +61,7 @@ export default function Card({ product, isCart }) {
           aria-label={
             product.isWished ? "remove from wishlist" : "add to wishlist"
           }
-          className={classes['product-card__btn']+ ' btn'}
+          className={classes['product-card__btn'] + ' btn'}
           onClick={
             product.isWished ? handleRemoveFromWishList : handleAddToWishList
           }

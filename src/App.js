@@ -10,15 +10,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/wishlist">
-          <WishList />
-        </Route>
-        <Route exact path="/cart">
-          <Cart />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/wishlist" component={WishList} />
+        <Route exact path="/cart" component={Cart} />
         <Route path="/not-found" component={NotFound} />
         <Route path="/product/:id" component={SingleCard} />
         <Redirect to="./not-found" />
